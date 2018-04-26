@@ -57,9 +57,9 @@ script: |
     mkdir -p $STAGING $BUILDDIR $BINDIR
     #
     cd $STAGING
-    unzip $INDIR/qt-win${BITS}-5.2.0-gitian-r2.zip
+    unzip $INDIR/qt-win${BITS}-5.2.0-gitian-r3.zip
     unzip $INDIR/boost-win${BITS}-1.55.0-gitian-r6.zip
-    unzip $INDIR/bitcoin-deps-win${BITS}-gitian-r10.zip
+    unzip $INDIR/worldgreencoin-deps-win${BITS}-gitian-r16.zip
     if [ "$NEEDDIST" == "1" ]; then
       # Make source code archive which is architecture independent so it only needs to be done once
       cd $HOME/build/worldgreencoin
