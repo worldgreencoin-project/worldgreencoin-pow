@@ -22,12 +22,12 @@ remotes:
 - "url": "https://github.com/worldgreencoin-project/worldgreencoin-pow.git"
   "dir": "worldgreencoin"
 files:
-- "qt-win32-5.2.0-gitian-r2.zip"
-- "qt-win64-5.2.0-gitian-r2.zip"
+- "qt-win32-5.2.0-gitian-r3.zip"
+- "qt-win64-5.2.0-gitian-r3.zip"
 - "boost-win32-1.55.0-gitian-r6.zip"
 - "boost-win64-1.55.0-gitian-r6.zip"
-- "bitcoin-deps-win32-gitian-r10.zip"
-- "bitcoin-deps-win64-gitian-r10.zip"
+- "worldgreencoin-deps-win32-gitian-r16.zip"
+- "worldgreencoin-deps-win64-gitian-r16.zip"
 script: |
   # Defines
   export TZ=UTC
