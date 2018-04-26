@@ -22,12 +22,12 @@ remotes:
 - "url": "https://github.com/worldgreencoin-project/worldgreencoin-pow.git"
   "dir": "worldgreencoin"
 files:
-- "qt-win32-5.2.0-gitian-r3.zip"
-- "qt-win64-5.2.0-gitian-r3.zip"
+- "qt-win32-5.2.0-gitian-r2.zip"
+- "qt-win64-5.2.0-gitian-r2.zip"
 - "boost-win32-1.55.0-gitian-r6.zip"
 - "boost-win64-1.55.0-gitian-r6.zip"
-- "worldgreencoin-deps-win32-gitian-r16.zip"
-- "worldgreencoin-deps-win64-gitian-r16.zip"
+- "bitcoin-deps-win32-gitian-r10.zip"
+- "bitcoin-deps-win64-gitian-r10.zip"
 script: |
   # Defines
   export TZ=UTC
@@ -57,9 +57,9 @@ script: |
     mkdir -p $STAGING $BUILDDIR $BINDIR
     #
     cd $STAGING
-    unzip $INDIR/qt-win${BITS}-5.2.0-gitian-r3.zip
+    unzip $INDIR/qt-win${BITS}-5.2.0-gitian-r2.zip
     unzip $INDIR/boost-win${BITS}-1.55.0-gitian-r6.zip
-    unzip $INDIR/worldgreencoin-deps-win${BITS}-gitian-r16.zip
+    unzip $INDIR/bitcoin-deps-win${BITS}-gitian-r10.zip
     if [ "$NEEDDIST" == "1" ]; then
       # Make source code archive which is architecture independent so it only needs to be done once
       cd $HOME/build/worldgreencoin
@@ -72,6 +72,9 @@ script: |
     mkdir -p distsrc
     cd distsrc
     tar -xf $HOME/build/worldgreencoin/$DISTNAME
+    cd ..
+    chmod -R 777 distsrc
+    cd distsrc
     # This is a temporary fix until 60dc589477f963d9848be7bb7fb0589a30deb912 is merged
     sed -i 's/qcncodecs qjpcodecs qtwcodecs qkrcodecs//g' worldgreencoin-qt.pro
     sed -i 's/Q_IMPORT_PLUGIN.*codecs.*//g' src/qt/bitcoin.cpp

@@ -45,6 +45,7 @@ script: |
   git archive HEAD | tar -x -C $OUTDIR/src
   cp $OUTDIR/src/doc/README.md $OUTDIR
   cp $OUTDIR/src/COPYING $OUTDIR
+  chmod -R 777 src
   cd src
   export BOOST_LIB_PATH="$LIBRARY_PATH"
   export BOOST_LIB_SUFFIX="-mt"
