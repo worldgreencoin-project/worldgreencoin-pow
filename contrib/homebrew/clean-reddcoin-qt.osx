@@ -1,0 +1,7 @@
+rm -rf WorldGreenCoin-Qt.app
+rm -f WorldGreenCoin-Qt.temp.dmg
+rm -rf build
+rm -rf dist
+rm -f Makefile
+rm -f qrc_bitcoin.cpp
+
